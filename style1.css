@@ -1,0 +1,586 @@
+/*  -----------------------------------------      icones size      --------------------------------*/
+.iconesSize {
+    width : 1.35em;
+    height: auto;
+}
+
+
+
+/*  -----------------------------------------      couleurs     --------------------------------*/
+
+
+.redbck {
+    background-color: red;
+}
+.bluebck {
+    background-color: blue;
+}
+.greenbck {
+    background-color: chartreuse;
+}
+.yellowbck {
+    background-color: yellow;
+}
+.whitebck {
+     background-color: white;
+}
+
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.yellow {
+    color: yellow;
+}
+.white {
+     color: white;
+}
+.black {
+     color: black;
+}
+
+/*  -----------------------------------------      calendrier taux d'occupations  resa.php     --------------------------------*/
+ 
+.arrhesnotconfirm {
+    background-color: yellow;
+}
+
+/*  -----------------------------------------      visionneuse     --------------------------------*/
+
+.borderTable, td, th  {
+  border: 2px solid black;
+  border-style: groove;
+  border-radius: 20px;
+  text-align: center;
+  align-self:  center;
+  justify-content: center;
+}
+
+
+th {
+    background-color: #ffffff69;
+    backdrop-filter: blur(2px);
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: relative;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+ 
+  color: black;
+  font-weight: bold;
+/*  
+  font-size: 20px;
+ */
+ 
+ 
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: #0057b3fc;
+  height: 2em;
+  margin-top: 73px;
+}
+  .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover  {
+    background-color: #7bbbff8c;
+    
+}
+.next:hover  {
+    background-color: #7bbbff8c;
+    
+}
+#visionneuse {
+    display: none;
+      position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  cursor: pointer;
+}
+
+
+#visionneuse > * {             /* tous les enfants directs */
+  opacity: 1;
+  transition: opacity 1s;
+ /*  height: 50%;
+  width: auto; */
+}
+#visionneuse > :last-child {   /* uniquement le dernier enfant direct */
+  opacity: 0;
+}
+
+
+/* ---------------------------------------------- carrousel accueil -------------------------------------------------------------------
+
+*/
+.wrap img {
+  width: 516px;
+  height: auto;
+  border-radius: 40px;
+  object-fit: cover;
+  cursor: pointer;
+  top: 34px;
+  position: relative;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+   animation-direction: alternate;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.wrap img:hover {
+  transform: scale(1.1); 
+ /* box-shadow: 0 8px 30px rgba(255, 255, 255, 0.8), 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.8); */
+}
+.wrap:hover {
+  animation-play-state: paused;
+}
+@keyframes slide {
+  to {
+    translate: calc(-4 * 250px);
+   /*  translate: calc(-4 * 250px); */
+  }
+}
+
+.carousel {
+    height: 421px;
+  
+  overflow: hidden;
+  
+  border-radius: 40px;
+  
+}
+ 
+/*   --------------------------------------- Police fonts ---------------------------------- */
+
+.hobo   {
+    font-family: hobo;
+} 
+ 
+@font-face {
+    font-family: hobo;
+    src: url(Fonts/HoboStd.otf);
+    }
+ 
+.lineheightlittle {
+    line-height: 1.5em;
+}
+ .textindentem{ 
+  text-indent: 2em;
+}
+ .bold {
+    font-weight: bolder;
+}
+
+ 
+/*   ---------------------------------------placement div---------------------------------- */
+
+/*  proportion largeur sur écran ( mob ou pc ) */
+
+
+.divwidth {
+     width: 88vw;
+}
+.paddinglittle {
+    padding: 1em;
+}
+.padding2em{
+     padding: 2em;
+}
+.paddingVeryLittle {
+    padding: 0.5em;
+}
+.paddingH {
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.marginlittle  {
+    margin: 1em;
+}
+.marginLeft {
+    margin-left: 20px;
+}
+.center {
+    text-align: center;
+}
+ .justselfcenter {
+    align-self:  center;
+}
+.justcontentcenter {
+    justify-content: center;
+}
+.justItemsfcenter {
+    align-items: center;
+}
+.fitcontent {
+    width: fit-content;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+
+.grid{
+    display: grid;
+}
+.flex {
+    display: flex;
+}
+.flexrow { 
+    flex-direction: row;
+}
+.flexcolumn {
+    flex-direction: column;
+}
+
+.blurdiv{
+    background-color: #fff9;
+    backdrop-filter: blur(2px);
+} 
+.transparentBackGround {
+    
+    background-color: #6f6f6f0f;
+    
+}
+.shadow {
+    box-shadow: inset 0 0 2em rgb(255, 255, 255), 0 0 2em rgb(0, 0, 0);
+}
+.border {
+    border-radius: 40px;
+}
+.borderTopLR {
+    border-top-left-radius:  40px;
+    border-top-right-radius: 40px;
+    padding-top : 1em;
+  
+}
+.borderBottomLR {
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding-bottom: 1em;
+ 
+}
+
+.borderSolid {
+    border: 2px solid ;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.button {
+     width: fit-content;
+    
+    
+    
+    color: black;
+   
+     
+}
+.button:hover {
+      background-color: #4e4e4e42;
+}
+
+@media (max-width: 800px) {  /* ------------------------------------------------------ mobile ---------------------------------------------- */
+ 
+td, th, tr  {
+  width: 3em;
+  height: 2em;
+  font-size: 0.8em;
+} 
+.superBigFont {
+    font-size: 2em;
+}
+.BigFont {
+    font-size: 1.5em;
+}
+.mediumBigFont{
+    font-size: 1em;
+}
+.mediumFont {
+    font-size:  0.75em;
+}
+.Font {
+    font-size: 0.5em;
+}
+.littleFont {
+    font-size: 0.3em;
+}
+
+input {
+    height: 1.3em;
+    width: 11.2em;
+}
+.width139em{
+    
+}
+ 
+.wrap {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 421px;
+  justify-items: stretch;
+  animation: slide 11s linear infinite;
+  animation-play-state: running;
+  animation-direction: alternate;
+}
+.imggallery {
+    width: 96px;
+    height: auto;
+   
+    
+}
+.wrap img {
+  width: 380px;
+}
+
+.icones {
+      width: 50px;
+    height: auto;
+     border-radius: 0px;
+   
+}
+.images600{
+       width: 300px;
+    height: auto;
+   
+}
+.images300{
+       width: 200px;
+    height: auto;
+   
+}
+  .prev,
+.next {
+         margin-top: 22%;
+}
+    .margin  {
+        margin: 1em;
+    }
+    .padding  {
+        padding: 1em;
+    }
+    .paddingVeryLittle {
+        padding: 0.1em;
+    }
+    body {
+        background-image:  url(images/bckgrnd.png);
+        background-size: cover;
+     /*    background-repeat: repeat-y; */
+        background-attachment: fixed;
+        color: black;
+        --screen: "mob";
+    }
+    
+      .flexdir  {
+    flex-direction: column;
+    }
+  
+    .mob  {
+        display: block;
+       
+    }
+    .notmob {
+        display: none;
+    }   
+    .sidebar {
+        width: 0px;
+    }
+  
+    .carousel {
+        width: 400px;
+        height: 327px;
+    }
+    .tarifs{
+       width: 300px;
+    height: auto;
+   
+    }
+
+}
+
+@media (min-width: 800px) {   /*-----------------------------------------------------  pc ------------------------------------ */
+ 
+td, th, tr  {
+  width: 4em;
+  height: 3em;
+  font-size: 1em;
+}
+.superBigFont {
+    font-size: 4em;
+}
+.BigFont {
+    font-size: 3em;
+}
+.mediumBigFont{
+    font-size: 1.5em;
+}
+.mediumFont {
+    font-size: 1.5em;
+}
+.Font {
+    font-size: 1em;
+}
+.littleFont {
+    font-size: 0.6em;
+}
+
+input {
+    height: 1.3em;
+    width: 14em;
+}
+.width139em{
+    width: 13.9em;
+}
+ .wrap {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 549px;
+  justify-items: stretch;
+  animation: slide 11s linear infinite;
+  animation-play-state: running;
+  animation-direction: alternate;
+}
+.imggallery {
+    width: 300px;
+    height: auto;
+   
+    
+}
+.icones {
+      width: 60px;
+    height: auto;
+     border-radius: 0px;
+   
+}
+.images600{
+       width: 600px;
+    height: auto;
+   
+}
+.images300{
+       width: 300px;
+    height: auto;
+   
+}
+.prev,
+.next {
+         margin-top: 18%;
+}
+  
+    .margin  {
+        margin: 3em;
+    }
+    .margin1em  {
+        margin: 1em;
+    }
+    .marginleftright8em  {
+        margin: 8em;
+    }
+    
+    .padding {
+        padding: 2em;
+    }
+    body {
+        background-image:  url(images/C-389Pc.png);
+       background-attachment: fixed;
+        background-size: cover;
+      /*   background-repeat: repeat-y;*/
+        color: black; 
+         --screen: "pc";
+    }
+    
+      .flexdir  {
+    flex-direction: row;
+    }
+     .blurdivresult{
+     background-color: #d6d6d65d;
+    backdrop-filter: blur(3px);
+    } 
+ 
+    .mob  {
+        display: none;
+        
+    }
+    .notmob {
+        display: block;
+    }  
+    .sidebar {
+          width: 0px;
+          
+    }
+   
+    .tarifs{
+       width: 600px;
+    height: auto;
+   
+}
+}
+
+#main {
+    margin-left:4vw;
+}
+
+ /* -------------------------- Bar de Nav --------------------------------------- */
+ 
+
+
+.sidebar {
+  
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+ /* backdrop-filter: blur(3px); */
+  box-shadow:   inset 0 0 5em rgb(255, 255, 255),  0 0 4em rgb(0, 0, 0);
+      
+  border-radius: 40px;
+  
+  overflow-x: hidden;
+  transition: 0.5s;
+   
+}
+
+.sidebar a {
+    
+  /*padding: 8px 8px 8px 32px;*/ 
+  text-decoration: none;
+   background-color: #fff;
+     color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+color: #2600ff;
+    
+    
+}
+ 
+.navbtn{
+     position: fixed;
+  z-index: 1;
+  top: 10px;
+  left: 0px;
+}
+
+
+
+
