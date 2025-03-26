@@ -14,3 +14,4 @@ il y a 2 interfaces :
 
 et une tache Cron pour supprimer les reservations non confirmées par versement d'arrhes
     
+L'interface gérance commence par l'index.php qui permettra un login et c'est seulement a la connexion vérifiée par le server(servermin.php) que le code sensible sera injecté ( admin.txt : l'html et adminfunction.txt : le javascript
