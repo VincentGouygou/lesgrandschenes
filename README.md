@@ -36,4 +36,4 @@ sont inutiles ou en doublon
 explicites
     - faire une alarme pour anticiper les arrivées et départs.
     - retirer les console.log et echo de tests
-    
+    - vérifier les permissions des fichiers
