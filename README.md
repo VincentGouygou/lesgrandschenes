@@ -4,10 +4,12 @@ présentation et gestion d'un camping
 il y a 2 interfaces : 
 
 une interface client qui regroupe :
-    - l'accueil 
-    - une galerie photos
-    - une page de reservation en ligne
-    - un page d'information et de messagerie via mail pour contacter le gérant
+   
+l'accueil 
+    
+  une galerie photos
+  une page de reservation en ligne
+  une page d'information et de messagerie via mail pour contacter le gérant
     
 une interface gérance avec des fonctionnalités :
     - d'encaissement d'arrhes
