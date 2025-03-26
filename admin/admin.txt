@@ -1,0 +1,361 @@
+<div class=" hobo  " >
+    <div class="flex  flexcolumn justcontentcenter ">
+        <div class="flex     flexcolumn justselfcenter fitcontent justcontentcenter   border shadow    margin " >
+             <div class="center mediumBigFont justselfcenter blurdiv   paddinglittle border margin">
+                Accueil Gérance <br>
+            </div>
+        </div>
+        
+       
+          <div class="flex  flexcolumn  justselfcenter fitcontent    border shadow  paddinglittle     marginlittle  " >
+                    
+                     <h2 class="mediumBigFont center paddingVeryLittle">Encaissement de séjour ou d'arrhes </h2>   
+                     <b class="mediumBigFont center paddingVeryLittle">Recherche par n° de réservation </b>   
+                    <div class="flex  flexrow ">
+                        
+                        <div class="flex flexcolumn lineheightlittle   paddingVeryLittle  "> 
+                            <label class="   right"></label> 
+                    <!--
+                            <label  class="   right"> Nom : </label>  
+                            <label class="   right"> Prénom :</label>   
+                             -->
+                            
+                        </div>
+                        <div class="flex   flexcolumn paddingVeryLittle  lineheightlittle ">
+                            <input class="    " size="25" type="text"     name="fIdResa"    id="fIdResa" value="" placeholder= 'N° de réservation '     >
+          <!--    
+                            <input class="    " type="text"     name="fNom"       id="fNom" value=""      > 
+                            <input class="   " type="text"     name="fPrenom"    id="fPrenom" value=""    >  
+                                <button onclick="seekResa('nomprenom');"  class="fitcontent" id="fbuttonseekResa"       >Rechercher par nom et prénom</button>
+                             <b class=" littleFont " id="encaissementMsg"></b>
+             -->
+                             <button onclick="seekResa();"  class="fitcontent" id="fbuttonseekResa"       >Rechercher par numero de réservation</button>
+                            
+                 
+                        </div>
+                        <div id="rowResaId" class="flex     flexcolumn justselfcenter fitcontent justcontentcenter   border shadow paddinglittle   margin " > 
+                                
+                        </div> 
+                    </div>       
+        </div> 
+ 
+        <div  class="flex  flexcolumn  justselfcenter   justcontentcenter   border shadow blurdiv  paddinglittle  margin">
+                            <label class="label"  >Total des taxes de séjour encaissées :   </label> 
+                            <label class="label justcontentcenter center" id="taxeSejour" > </label>
+                            
+                             <input class="lineheightlittle" type="date" id="startDate" value="2025-06-01" required hidden>  
+                            
+                              <input class="lineheightlittle" type="date" id="endDate"  value="2025-09-30"  required hidden> 
+                            
+        </div>
+         <div class="flex     flexcolumn justselfcenter fitcontent justcontentcenter   border shadow    margin " >
+                <br>
+            <div class="center mediumBigFont justselfcenter blurdiv   paddinglittle border margin">
+               
+                <br>
+               <label class="label redbck "   >Rouge : Complets <br></label>
+               <label class="label greenbck "   > Vert  : Réservé en partie <br> </label>
+               <label class="label bluebck  white"  > Bleu  : libres <br></label>
+                <br>
+                <label class="label "  style="background-color: yellow">Boutons jaunes : Des confirmations en attente  <br>
+                Cliquez pour toutes les voir <br></label>
+                 <button class="btnjour  border " disabled>   Date / Mois<br>Nb Occup </button>      
+            </div>
+        </div>                   
+    </div>
+    <div class="  flex center  flexcolumn justItemsfcenter   justcontentcenter "> 
+        <div class="flex flexrow ">
+            <div   class="flex  flexcolumn  justselfcenter  justcontentcenter   border shadow   paddinglittle  margin">
+                <table class="borderTable" >
+                  <tr class="borderTable">
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mer</th>
+                    <th>Jeu</th>
+                    <th>Ven</th>
+                    <th>Sam</th>
+                    <th>Dim</th>
+                  </tr>
+                  <tr>
+                    <td   id="Lundi1">  </td>
+                    <td   id="Mardi1">  </td>
+                    <td   id="Mercredi1">  </td>
+                    <td   id="Jeudi1">  </td>
+                    <td   id="Vendredi1">  </td>
+                    <td   id="Samedi1">  </td>
+                    <td   id="Dimanche1">  </td>
+                  </tr>
+                  <tr>
+                    <td  id="Lundi2">  </td>
+                    <td  id="Mardi2">  </td>
+                    <td  id="Mercredi2">  </td>
+                    <td  id="Jeudi2">  </td>
+                    <td  id="Vendredi2"> </td>
+                    <td  id="Samedi2">  </td>
+                    <td  id="Dimanche2"> </td>
+                  </tr>
+                   <tr>
+                    <td  id="Lundi3">  </td>
+                    <td  id="Mardi3">  </td>
+                    <td  id="Mercredi3">  </td>
+                    <td  id="Jeudi3">  </td>
+                    <td  id="Vendredi3">  </td>
+                    <td  id="Samedi3">  </td>
+                    <td  id="Dimanche3">  </td>
+                  </tr>
+                  <tr>
+                    <td  id="Lundi4">  </td>
+                    <td  id="Mardi4">  </td>
+                    <td  id="Mercredi4">  </td>
+                    <td  id="Jeudi4">  </td>
+                    <td  id="Vendredi4"> </td>
+                    <td  id="Samedi4">  </td>
+                    <td  id="Dimanche4"> </td>
+                  </tr>
+                   <tr>
+                    <td   id="Lundi5">  </td>
+                    <td   id="Mardi5">  </td>
+                    <td   id="Mercredi5">  </td>
+                    <td   id="Jeudi5">  </td>
+                    <td   id="Vendredi5">  </td>
+                    <td   id="Samedi5">  </td>
+                    <td   id="Dimanche5">  </td>
+                  </tr>
+                  
+                  <tr>
+                    <td  id="Lundi6">  </td>
+                    <td  id="Mardi6">  </td>
+                    <td  id="Mercredi6">  </td>
+                    <td  id="Jeudi6">  </td>
+                    <td  id="Vendredi6"> </td>
+                    <td  id="Samedi6">  </td>
+                    <td  id="Dimanche6"> </td>
+                  </tr>
+            </table> 
+            
+            </div>
+            <div     class="flex  flexcolumn  justselfcenter   justcontentcenter   border shadow    paddinglittle  margin">
+                <table class="borderTable" >
+                  <tr class="borderTable">
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mer</th>
+                    <th>Jeu</th>
+                    <th>Ven</th>
+                    <th>Sam</th>
+                    <th>Dim</th>
+                  </tr>
+                
+                   <tr>
+                    <td  id="Lundi7">  </td>
+                    <td  id="Mardi7">  </td>
+                    <td  id="Mercredi7">  </td>
+                    <td  id="Jeudi7">  </td>
+                    <td  id="Vendredi7">  </td>
+                    <td  id="Samedi7">  </td>
+                    <td  id="Dimanche7">  </td>
+                  </tr>
+                  <tr>
+                    <td  id="Lundi8">  </td>
+                    <td  id="Mardi8">  </td>
+                    <td  id="Mercredi8">  </td>
+                    <td  id="Jeudi8">  </td>
+                    <td  id="Vendredi8"> </td>
+                    <td  id="Samedi8">  </td>
+                    <td  id="Dimanche8"> </td>
+                  </tr>
+                    <tr>
+                    <td   id="Lundi9">  </td>
+                    <td   id="Mardi9">  </td>
+                    <td   id="Mercredi9">  </td>
+                    <td   id="Jeudi9">  </td>
+                    <td   id="Vendredi9">  </td>
+                    <td   id="Samedi9">  </td>
+                    <td   id="Dimanche9">  </td>
+                  </tr>
+                  <tr>
+                    <td  id="Lundi10">  </td>
+                    <td  id="Mardi10">  </td>
+                    <td  id="Mercredi10">  </td>
+                    <td  id="Jeudi10">  </td>
+                    <td  id="Vendredi10"> </td>
+                    <td  id="Samedi10">  </td>
+                    <td  id="Dimanche10"> </td>
+                  </tr>
+                   <tr>
+                    <td  id="Lundi11">  </td>
+                    <td  id="Mardi11">  </td>
+                    <td  id="Mercredi11">  </td>
+                    <td  id="Jeudi11">  </td>
+                    <td  id="Vendredi11">  </td>
+                    <td  id="Samedi11">  </td>
+                    <td  id="Dimanche11">  </td>
+                  </tr>
+                  <tr>
+                    <td  id="Lundi12">  </td>
+                    <td  id="Mardi12">  </td>
+                    <td  id="Mercredi12">  </td>
+                    <td  id="Jeudi12">  </td>
+                    <td  id="Vendredi12"> </td>
+                    <td  id="Samedi12">  </td>
+                    <td  id="Dimanche12"> </td>
+                  </tr>
+            </table> 
+            
+            </div>
+        </div> 
+     
+    <div id="dDivListResaNonConfirm"  class="flex  flexcolumn  justselfcenter   justcontentcenter   border shadow    paddinglittle  margin">
+        
+        </div>
+        
+    <!--      -->
+        <div class="flex flexrow ">
+            <div    class="flex  flexcolumn  justselfcenter   justcontentcenter   border shadow    paddinglittle  margin">
+                     <table class="borderTable" >
+                  <tr class="borderTable">
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mer</th>
+                    <th>Jeu</th>
+                    <th>Ven</th>
+                    <th>Sam</th>
+                    <th>Dim</th>
+                  </tr>
+            
+                
+                  
+                   <tr>
+                <td   id="Lundi13">  </td>
+                <td   id="Mardi13">  </td>
+                <td   id="Mercredi13">  </td>
+                <td   id="Jeudi13">  </td>
+                <td   id="Vendredi13">  </td>
+                <td   id="Samedi13">  </td>
+                <td   id="Dimanche13">  </td>
+              </tr>
+              <tr>
+                <td  id="Lundi14">  </td>
+                <td  id="Mardi14">  </td>
+                <td  id="Mercredi14">  </td>
+                <td  id="Jeudi14">  </td>
+                <td  id="Vendredi14"> </td>
+                <td  id="Samedi14">  </td>
+                <td  id="Dimanche14"> </td>
+              </tr>
+               <tr>
+                <td  id="Lundi15">  </td>
+                <td  id="Mardi15">  </td>
+                <td  id="Mercredi15">  </td>
+                <td  id="Jeudi15">  </td>
+                <td  id="Vendredi15">  </td>
+                <td  id="Samedi15">  </td>
+                <td  id="Dimanche15">  </td>
+              </tr>
+              <tr>
+                <td  id="Lundi16">  </td>
+                <td  id="Mardi16">  </td>
+                <td  id="Mercredi16">  </td>
+                <td  id="Jeudi16">  </td>
+                <td  id="Vendredi16"> </td>
+                <td  id="Samedi16">  </td>
+                <td  id="Dimanche16"> </td>
+              </tr>
+               <tr>
+                <td   id="Lundi17">  </td>
+                <td   id="Mardi17">  </td>
+                <td   id="Mercredi17">  </td>
+                <td   id="Jeudi17">  </td>
+                <td   id="Vendredi17">  </td>
+                <td   id="Samedi17">  </td>
+                <td   id="Dimanche17">  </td>
+              </tr>
+              <tr>
+                <td  id="Lundi18">  </td>
+                <td  id="Mardi18">  </td>
+                <td  id="Mercredi18">  </td>
+                <td  id="Jeudi18">  </td>
+                <td  id="Vendredi18"> </td>
+                <td  id="Samedi18">  </td>
+                <td  id="Dimanche18"> </td>
+              </tr>
+            </table> 
+             </div>
+            <div   class="flex  flexcolumn  justselfcenter   justcontentcenter   border shadow    paddinglittle  margin">
+                     <table class="borderTable" >
+                  <tr class="borderTable">
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mer</th>
+                    <th>Jeu</th>
+                    <th>Ven</th>
+                    <th>Sam</th>
+                    <th>Dim</th>
+                  </tr>
+           
+              
+               <tr>
+                <td  id="Lundi19">  </td>
+                <td  id="Mardi19">  </td>
+                <td  id="Mercredi19">  </td>
+                <td  id="Jeudi19">  </td>
+                <td  id="Vendredi19">  </td>
+                <td  id="Samedi19">  </td>
+                <td  id="Dimanche19">  </td>
+              </tr>
+               <tr>
+                <td  id="Lundi20">  </td>
+                <td  id="Mardi20">  </td>
+                <td  id="Mercredi20">  </td>
+                <td  id="Jeudi20">  </td>
+                <td  id="Vendredi20">  </td>
+                <td  id="Samedi20">  </td>
+                <td  id="Dimanche20">  </td>
+              </tr>
+                            <tr>
+                <td  id="Lundi21">  </td>
+                <td  id="Mardi21">  </td>
+                <td  id="Mercredi21">  </td>
+                <td  id="Jeudi21">  </td>
+                <td  id="Vendredi21"> </td>
+                <td  id="Samedi21">  </td>
+                <td  id="Dimanche21"> </td>
+              </tr>
+               <tr>
+                <td   id="Lundi22">  </td>
+                <td   id="Mardi22">  </td>
+                <td   id="Mercredi22">  </td>
+                <td   id="Jeudi22">  </td>
+                <td   id="Vendredi22">  </td>
+                <td   id="Samedi22">  </td>
+                <td   id="Dimanche22">  </td>
+              </tr>
+              <tr>
+                <td  id="Lundi23">  </td>
+                <td  id="Mardi23">  </td>
+                <td  id="Mercredi23">  </td>
+                <td  id="Jeudi23">  </td>
+                <td  id="Vendredi23"> </td>
+                <td  id="Samedi23">  </td>
+                <td  id="Dimanche23"> </td>
+              </tr>
+               <tr>
+                <td  id="Lundi24">  </td>
+                <td  id="Mardi24">  </td>
+                <td  id="Mercredi24">  </td>
+                <td  id="Jeudi24">  </td>
+                <td  id="Vendredi24">  </td>
+                <td  id="Samedi24">  </td>
+                <td  id="Dimanche24">  </td>
+              </tr>
+            </table>     
+                </div>
+            
+        </div> 
+    </div>
+     
+</div>
+       
+       
+
+

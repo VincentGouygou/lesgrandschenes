@@ -1,0 +1,248 @@
+
+
+/*  -----------------------------------------      couleurs     --------------------------------*/
+
+
+.redbck {
+    background-color: red;
+}
+.bluebck {
+    background-color: blue;
+}
+.greenbck {
+    background-color: chartreuse;
+}
+.yellowbck {
+    background-color: yellow;
+}
+.whitebck {
+     background-color: white;
+}
+
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.yellow {
+    color: yellow;
+}
+.white {
+     color: white;
+}
+
+
+.borderTable, td, th, tr  {
+  border: 2px solid black;
+  border-style: groove;
+  border-radius: 20px;
+  text-align: center;
+  align-self:  center;
+  justify-content: center;
+}
+td, th, tr  {
+  width: 4em;
+  height: 3em;
+  font-size: 1em;
+}
+ 
+.btnjour {
+   
+    margin:  0.5em;
+}
+.arrhesnotconfirm {
+    background-color: yellow;
+}
+.pointer {
+    cursor: pointer;
+}
+.paddinglittle {
+    padding: 1em;
+}
+.paddingVeryLittle {
+    padding: 0.5em;
+}
+.marginlittle  {
+    margin: 1em;
+}
+ 
+.center {
+    text-align: center;
+}
+ .justselfcenter {
+    align-self:  center;
+}
+.justItemsfcenter {
+    align-items: center;
+}
+.justcontentcenter {
+    justify-content: center;
+}
+.fitcontent {
+    width: fit-content;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+
+.grid{
+    display: grid;
+}
+.flex {
+    display: flex;
+}
+.flexrow { 
+    flex-direction: row;
+}
+.flexcolumn {
+    flex-direction: column;
+}
+.divwidth {
+    width: 75vw;
+}
+.blurdiv{
+    background-color: #d6d6d6a9;
+    backdrop-filter: blur(1px);
+}  
+.shadow {
+    box-shadow: inset 0 0 5em rgb(255, 255, 255), 0 0 4em rgb(0, 0, 0);
+}
+.shadowInv {
+    box-shadow: inset 0 0 5em rgb(0, 0, 0), 0 0 4em rgb(255, 255, 255);
+}
+
+.border {
+    border-radius: 40px;
+}
+@media (max-width: 800px) {  /*  mobile  */
+.wrap img {
+  width: 380px;
+}
+.images100 {
+      width: 100px;
+    height: auto;
+   
+}
+.images600{
+       width: 300px;
+    height: auto;
+   
+}
+.images300{
+       width: 200px;
+    height: auto;
+   
+}
+   .superBigFont{
+        font-size: 2em;
+    }
+    .margin  {
+        margin: 1em;
+    }
+    .padding  {
+        padding: 1em;
+    }
+    body {
+        background-image:  url(images/buddha.jpg);
+        background-size: 100%;
+        background-attachment: fixed;
+         
+        --screen: "mob";
+    }
+    
+      .flexdir  {
+    flex-direction: column;
+    }
+  
+    .mob  {
+        display: block;
+       
+    }
+    .notmob {
+        display: none;
+    }   
+    .sidebar {
+        width: 0px;
+    }
+    .carousel {
+        width: 400px;
+    }
+    .tarifs{
+       width: 300px;
+    height: auto;
+   
+    }
+
+}
+
+@media (min-width: 800px) {   /*  pc  */
+.images100 {
+      width: 100px;
+    height: auto;
+   
+}
+.images600{
+       width: 600px;
+    height: auto;
+   
+}
+.images300{
+       width: 300px;
+    height: auto;
+   
+}
+.prev,
+.next {
+         margin-top: 210px;
+}
+    .superBigFont{
+        font-size: 4em;
+    }
+    .margin  {
+        margin: 2em;
+    }
+    .padding {
+        padding: 2em;
+    }
+    body {
+        background-image:  url(images/buddha.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+         
+         --screen: "pc";
+    }
+    
+      .flexdir  {
+    flex-direction: row;
+    }
+     .blurdivresult{
+     background-color: #d6d6d65d;
+    backdrop-filter: blur(3px);
+    } 
+ 
+    .mob  {
+        display: none;
+        
+    }
+    .notmob {
+        display: block;
+    }  
+    .sidebar {
+          width: 50px;
+          
+    }
+     
+    .tarifs{
+       width: 600px;
+    height: auto;
+   
+}
+}
+
