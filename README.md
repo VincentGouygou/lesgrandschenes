@@ -5,7 +5,7 @@ il y a 2 interfaces :
 
 une interface client qui regroupe :
    
-l'accueil 
+l'accueil :
     
   une galerie photos
   une page de reservation en ligne
