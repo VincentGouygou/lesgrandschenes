@@ -18,7 +18,8 @@ une interface gérance avec des fonctionnalités :
 et une tache Cron pour supprimer les reservations non confirmées par versement d'arrhes
 L'interface gérance commence par l'index.php
   - qui permettra un login complexifié ( pour entrer le password et l'id, il faut effacer la derniere lettre de l'id puis la remettre et clicquer "se connecter" en moins d'1.5 secondes, car audela de 11 lettres ce bouton disparait) 
-   - et c'est seulement a la connexion vérifiée par le server(servermin.php) que le code sensible sera injecté ( admin.txt : l'html et adminfunction.txt : le javascript
+   - et c'est seulement a la connexion vérifiée par le server(servermin.php) que le code sensible sera injecté ( admin.txt : l'html et adminfunction.txt : le javascript)
+
 todo : 
     - refaire un site vierge avec une page de configuration pour pouvoir vendre ce projet a tout camping le désirant
     - mettre des alt aux images
