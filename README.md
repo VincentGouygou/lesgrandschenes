@@ -26,6 +26,6 @@ todo :
     . mettre des alt aux images
     . mettre en fonctions les taches récurrentes
     . vérifier les "surcouches" et "bidouillages" effectuée dans l'empressement. Certaines parties du code sont inutiles ou en doublon
-    . refaire la nomemclature pour qu'elle soit plus explicite  
+    . refaire la nomemclature des fichiers et le nomage des variables et fonctions pour qu'elles soient plus explicites
     . faire une alarme pour anticiper les arrivées et départs.
     
