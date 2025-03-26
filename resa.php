@@ -425,14 +425,12 @@ var minDate=currentYear+"-06-15";
 var maxDate=currentYear+"-09-15";
 
 let valueInputDate = '15-06-'+ currentYear;
-console.log('>>>>> valueInputDate'+ valueInputDate);
- 
+  
 document.getElementById("startDate").setAttribute('min', minDate ); 
 document.getElementById("startDate").setAttribute('max',maxDate ); 
 document.getElementById("endDate").setAttribute('min', minDate );
 document.getElementById("endDate").setAttribute('max', maxDate );   
-console.log(currentDate);
-// vaariables globales .... verifier doublons mise en ballise hidden dans html ^^ 
+ // variables globales .... verifier doublons mise en ballise hidden dans html ^^ 
 var nomPrenomAdresseTelBool=true;
 var mailResabool        =false;
 var boolFinAvantDeb= false;
@@ -554,17 +552,7 @@ function checkmailResaProcedure() {
         
         
     }
-         /*
-if (njours>0) {
-    const myInterCheckEmpl =setInterval(voirEmplLibres ,1000);
-     const myInterPrix =setInterval(prix ,1000);
-} else {
-    clearInterval(myInterCheckEmpl);
-    clearInterval(myInterPrix);
-}
-
-      
-*/
+ 
          if (njours>0) {
             voirEmplLibres();
         }  
@@ -642,13 +630,11 @@ function    checkEmplOccupDates (){
 
                           
         success: function(response) { 
-             var numeroSemaine = 1;
-             var listoccup= [];
+            var numeroSemaine = 1;
+            var listoccup= [];
             var occup = response.txOccup;  
             var coloor; //              0          1       2         3           4          5         6         
-             const jourdelasemaine =[ 'Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi' ];
-             
-       
+            const jourdelasemaine =[ 'Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi' ];
             var dayZero = new Date(occup[0][0]);
                 dayZero =  dayZero.getDay();
             var dayZeroNom = jourdelasemaine[dayZero];
@@ -657,15 +643,10 @@ function    checkEmplOccupDates (){
                 tailleOccup=122;
             }
             var dDate = new Date(occup[0][0]);
-                
-                var mMois = dDate.getMonth()+1;
+            var mMois = dDate.getMonth()+1;
             var mMoisAntecedant = mMois;             
             
             for (var i = 0; i < tailleOccup ; i++) {
-            
-                
-                
-                
                 dDate = new Date(occup[i][0]);
                 mMois = dDate.getMonth()+1;
                 if ( mMoisAntecedant != mMois ) {
@@ -683,206 +664,168 @@ function    checkEmplOccupDates (){
                         default:
                             
                     } 
-                     numeroSemaine++;
-                     if (numeroSemaine==25) {  numeroSemaine=1 ;             }
+                numeroSemaine++;
+                if (numeroSemaine==25) {  numeroSemaine=1 ;             }
                 }
-                
                 dDate = dDate.getDate();
-               
-                let dayIndex    =  new Date(occup[i][0]);
-                dayIndex        = dayIndex.getDay();
+                let dayIndex    = new Date(occup[i][0]);
+                    dayIndex    = dayIndex.getDay();
                 let dayIndexNom = jourdelasemaine[ dayIndex ];
-                  confirmArrhes=   occup[i][2];
-               
+                confirmArrhes   = occup[i][2];
                 
-                         if (confirmArrhes==0) { 
-                          
-                                               arrhesnotconfirm=" ";
-
-                         } 
-                          if (confirmArrhes==1) { 
-                          
-                                                   arrhesnotconfirm=" ";
-                         } 
+                if (confirmArrhes==0) { 
+                    arrhesnotconfirm=" ";
+                } 
+                if (confirmArrhes==1) { 
+                    arrhesnotconfirm=" ";
+                } 
 
                 $('#'+dayIndexNom+numeroSemaine).html( "<button class='btnjour "+ arrhesnotconfirm+"  border   '    >  "+dDate+" </button>" );
-               
-               
+                
                 switch (  Math.ceil(occup[i][1] /10) ) {
-                     case 0 :   coloor= "Black   ";
-                               bgcolor = "Screamin Green " ;
-                       break;       
-                     case 1 : coloor= "Black"   ;
-                               bgcolor = "Chartreuse  " ;
+                    case 0 : coloor  = "Black   ";
+                             bgcolor = "Screamin Green " ;
+                    break;       
+                    case 1 : coloor  = "Black"   ;
+                             bgcolor = "Chartreuse  " ;
                       
-                       break;
-                     case 2 :  coloor= "White  ";
-                               bgcolor = "LightSalmon " ;
-                       break;
-                     default:   coloor="White";
-                                bgcolor = "red" ;
+                    break;
+                    case 2 : coloor  = "White  ";
+                             bgcolor = "LightSalmon " ;
+                    break;
+                    default: coloor  = "White";
+                             bgcolor = "red" ;
                 }
  
                 if (occup[i][1] ===25 ) { 
-                    coloor="White";
-                    bgcolor = "red" ;
+                    coloor  = "White";
+                    bgcolor = "red";
                 }
                  if (occup[i][1] ===0 ) { 
-                    coloor= "white"   ;
-                    bgcolor = "blue " ;
+                    coloor  = "white";
+                    bgcolor = "blue ";
                 }
                 document.getElementById(dayIndexNom+numeroSemaine).style.color = coloor;
                 document.getElementById(dayIndexNom+numeroSemaine).style.backgroundColor = bgcolor;
          
-                
                 $('#'+dayIndexNom+numeroSemaine).color = coloor; 
-                
                 dayIndex++;
                 if (dayIndex==1) {
-                     numeroSemaine++;
+                    numeroSemaine++;
                     if (numeroSemaine==25) {  numeroSemaine=1 ;             }
                 }
                 mMoisAntecedant = mMois; 
             } /// fin du for -------------------------------
-              
-           // $('#resultOccup').html(listoccup);
-            
-       
-            
-           
-            
 
-      
-            
-       
-        },
-                            
-                           
+        }, // fin success
+
         error: function(error) {
-             console.log("errrrror : "+error.statusText);
+            console.log("errrrror : "+error.statusText);
                             
         }
         
-    });       
+    });     // fin ajax  
 }       
      
 function resa() {
-       console.log(arrhes+" arrhes");
+        
 document.getElementById('btnResa').hidden=true; 
 clearInterval(myIntercheckmailResa); 
 let currentDate = new Date().toJSON().slice(0, 10);
     
-     let ip =        $('#ip').val();
-    let nom =       $('#fNomResa').val();
-    let prenom =    $('#fPrenomResa').val();
-    let nomPrenom=nom+" "+prenom;
-   
-    let    dateResa=currentDate;
-    let    confirm="false" ;
-    var    dateDeb= $('#startDate').val();
-    var    dateFin= $('#endDate').val();
-    let    email=$('#fEmailResa').val();
-    let    adresse=$('#fAdresseResa').val();
-    let    tel=$('#fTelResa').val();
-    let    prix=   $('#prix').html();
-    let    encaiC= "false";
+    let ip          = $('#ip').val();
+    let nom         = $('#fNomResa').val();
+    let prenom      = $('#fPrenomResa').val();
+    let nomPrenom   = nom+" "+prenom;
+    let dateResa    = currentDate;
+    let confirm     = "false" ;
+    var dateDeb     = $('#startDate').val();
+    var dateFin     = $('#endDate').val();
+    let email       = $('#fEmailResa').val();
+    let adresse     = $('#fAdresseResa').val();
+    let tel         = $('#fTelResa').val();
+    let prix        = $('#prix').html();
+    let encaiC      = "false";
                                              // à coder : type logement 
-    let    typLogemt=1 ;
-    let nadult= Number($('#finforesaNadult').val()); 
-    let nenfant=Number($('#finforesaNenfant').val()); 
-    let nchien=Number($('#finforesaNchien').val()); 
-    let idEmpl= $('#emplNumero').val();
-                        console.log("ok "+dateResa);
-        
-    var myData =  { "action": "resa",
-                    "ip": ip,
-                    "arrhes"  : arrhes,
-                    "taxeLocale" : taxeLocale,
-                    "idEmpl": idEmpl,
-                    "nomPrenom": nomPrenom,
-                    "dateResa": dateResa,
-                    "confirm": confirm,
-                    "dateDeb": dateDeb,
-                    "dateFin": dateFin,
-                    "email": email,
-                    "adresse": adresse,
-                    "tel": tel,
-                    "prix": prix,
-                    "encaiC": encaiC,
-                    "nAdult": nadult,
-                    "nEnfant": nenfant,
-                    "nChien": nchien,
-                    "typLogemt": typLogemt};
-
-                    
+    let typLogemt   = 1;
+    let nadult      = Number($('#finforesaNadult').val()); 
+    let nenfant     = Number($('#finforesaNenfant').val()); 
+    let nchien      = Number($('#finforesaNchien').val()); 
+    let idEmpl      = $('#emplNumero').val();
+         
+    var myData =  { "action"        : "resa",
+                    "ip"            : ip,
+                    "arrhes"        : arrhes,
+                    "taxeLocale"    : taxeLocale,
+                    "idEmpl"        : idEmpl,
+                    "nomPrenom"     : nomPrenom,
+                    "dateResa"      : dateResa,
+                    "confirm"       : confirm,
+                    "dateDeb"       : dateDeb,
+                    "dateFin"       : dateFin,
+                    "email"         : email,
+                    "adresse"       : adresse,
+                    "tel"           : tel,
+                    "prix"          : prix,
+                    "encaiC"        : encaiC,
+                    "nAdult"        : nadult,
+                    "nEnfant"       : nenfant,
+                    "nChien"        : nchien,
+                    "typLogemt"     : typLogemt};
     $.ajax({
-        url: "server.php", // Url appelée
-        method: "POST",              // la méthode GET ou POST
+        url: "server.php",   
+        method: "POST",      
         data: myData,
         dataType: "JSON",
-
-                             // si l'envoi est réussi 
         success: function(response) { 
             console.log("ok ");
             $('#msgresaresult').html("Confirmation de réservation à réception des arrhes. Un email vous a été envoyé.      ");
-// partir ailleurs sinon btn resa reste apparant , un email vous a été envoyé
         },
-                            
                            
         error: function(error) {
-             console.log("errrrror : "+error.statusText);
-                            
+            console.log("errrrror : "+error.statusText);
         }
-        
     });
 }
 
 
-function prix() {
+function prix() { 
     
-     
-     
-    var njoursHorsSaison=0;
-    var njoursSaison = 0;
-      prixbool=true;
-    let nadult= $('#finforesaNadult').val(); 
-    let nenfant=$('#finforesaNenfant').val(); 
-    let nchien=$('#finforesaNchien').val(); 
+    var njoursHorsSaison= 0;
+    var njoursSaison    = 0;
+        prixbool        = true;
+    let nadult          = $('#finforesaNadult').val(); 
+    let nenfant         = $('#finforesaNenfant').val(); 
+    let nchien          = $('#finforesaNchien').val(); 
     
-    var dateDeb= new Date($('#startDate').val());
-    var dateFin= new Date($('#endDate').val());
-    var dateyear= new Date();
-    var year = dateyear.getFullYear();
-    var debSaison= new Date(year+'/07/01');
-    var finSaison= new Date(year+'/08/31');
+    var dateDeb         = new Date($('#startDate').val());
+    var dateFin         = new Date($('#endDate').val());
+    var dateyear        = new Date();
+    var year            = dateyear.getFullYear();
+    var debSaison       = new Date(year+'/07/01');
+    var finSaison       = new Date(year+'/08/31');
     
-    if ( dateDeb <  debSaison &&  dateFin <  finSaison && dateFin > debSaison) { // a cheval 01/07  / (1000 * 3600 * 24)
-       //--------------------------------------------------------------------------------------------- var enlevé- !!!!!!--------------------------------------------
-       
-          njoursSaison =  Math.round( (dateFin - debSaison) / (1000 * 3600 * 24) )  ;
-          njoursHorsSaison = Math.round( (debSaison  - dateDeb) / (1000 * 3600 * 24) ) ;
+    if ( dateDeb <  debSaison &&  dateFin <  finSaison && dateFin > debSaison) { // a cheval 01/07   
+        njoursSaison =  Math.round( (dateFin - debSaison) / (1000 * 3600 * 24) )  ;
+        njoursHorsSaison = Math.round( (debSaison  - dateDeb) / (1000 * 3600 * 24) ) ;
         $('#njoursInfo').html(Number(njoursSaison+njoursHorsSaison) + " nuits");
-        console.log( debSaison+" " +dateDeb+' njoursSaison : '+njoursSaison+" njoursHorsSaison : "+njoursHorsSaison);
-        
     }
-     if ( dateDeb > debSaison && dateDeb < finSaison && dateFin > finSaison ) { // a cheval 31/08
     
-          njoursSaison = Math.round( (finSaison -  dateDeb) / (1000 * 3600 * 24) )  ;
-          njoursHorsSaison =  Math.round(   (dateFin  - finSaison ) / (1000 * 3600 * 24) )  ;
+    if ( dateDeb > debSaison && dateDeb < finSaison && dateFin > finSaison ) { // a cheval 31/08
+        njoursSaison = Math.round( (finSaison -  dateDeb) / (1000 * 3600 * 24) )  ;
+        njoursHorsSaison =  Math.round(   (dateFin  - finSaison ) / (1000 * 3600 * 24) )  ;
         $('#njoursInfo').html(Number(njoursSaison+njoursHorsSaison) + " nuits");
-        console.log('njoursSaison : '+njoursSaison+" njoursHorsSaison : "+njoursHorsSaison);
-        
     }
-     if ( dateDeb > finSaison || dateFin < debSaison ) { // hors saison 
-           njoursHorsSaison = Math.round( (dateFin  - dateDeb) / (1000 * 3600 * 24) ) ;
-            njoursSaison = 0;
-            console.log('njoursSaison : '+njoursSaison+" njoursHorsSaison : "+njoursHorsSaison);
-     }
-      if ( dateDeb > debSaison  && dateFin < finSaison ) { // en saison 
-            njoursSaison =  Math.round( (dateFin - dateDeb) / (1000 * 3600 * 24) )  ;
-            njoursHorsSaison =0;  
-            console.log('njoursSaison : '+njoursSaison+" njoursHorsSaison : "+njoursHorsSaison);
-     }
+    
+    if ( dateDeb > finSaison || dateFin < debSaison ) { // hors saison 
+        njoursHorsSaison = Math.round( (dateFin  - dateDeb) / (1000 * 3600 * 24) ) ;
+        njoursSaison = 0;
+    }
+    
+    if ( dateDeb > debSaison  && dateFin < finSaison ) { // en saison 
+        njoursSaison =  Math.round( (dateFin - dateDeb) / (1000 * 3600 * 24) )  ;
+        njoursHorsSaison =0;  
+    }
     
     let myData =  {"action"             : "prix",
                     "njoursHorsSaison"  : njoursHorsSaison,
@@ -892,68 +835,56 @@ function prix() {
                     "nchien"            : nchien  
                      };
                     
-        $.ajax({
-                            url: "server.php", // Url appelée
-                            method: "POST",              // la méthode GET ou POST
-                            data:myData,
-                            dataType: "JSON",
+    $.ajax({
+        url: "server.php", // Url appelée
+        method: "POST",              // la méthode GET ou POST
+        data:myData,
+        dataType: "JSON",
 
-                             // si l'envoi est réussi 
-                            success: function(response) {
-                                 console.log(response.prix+" prix avant round, njs"+njoursHorsSaison+" njhs"+njoursSaison);
-                                                        // delete =>>>> arrondissement effectué sur le serveur à verif 
-                            let prix=Math.round(response.prix * 100) / 100;
-                            response.arrhes=Math.round(response.arrhes * 100) / 100;
-                            arrhes=response.arrhes;
-                            $('#prix').html(prix); 
-                            $('#arrhes').html( "( arrhes inclus : "+ arrhes+"euros)");
-                                
-                            taxeLocale=response.taxeLocale;
-                            
-                            taxeLocale=Number(taxeLocale).toFixed(2);
-                             $('#taxeLocale').html(taxeLocale);
-                                
-                                
-                            
-                             console.log(response.prix+" "+response.taxeLocale);
-                            document.getElementById('btnPrix').hidden=true; 
-                             if  (mailResabool && nomPrenomAdresseTelBool) {
-                                 document.getElementById('btnResa').hidden=false; 
-                                 
-                             }
-                            
-                            },
-                            
-                            // s il y a une erreur je l'affiche en console et dans la div #messageID
-                            error: function(error) {
-                                console.log("errrrroreuuuu"+error.statusText);
-                            
-                            }
-        });
+         // si l'envoi est réussi 
+        success: function(response) {
+            // delete =>>>> arrondissement effectué sur le serveur à verif 
+            let prix=Math.round(response.prix * 100) / 100;
+            response.arrhes=Math.round(response.arrhes * 100) / 100;
+            arrhes=response.arrhes;
+            $('#prix').html(prix); 
+            $('#arrhes').html( "( arrhes inclus : "+ arrhes+"euros)");
+                
+            taxeLocale=response.taxeLocale;
+            
+            taxeLocale=Number(taxeLocale).toFixed(2); // mise à 2 decimal
+            $('#taxeLocale').html(taxeLocale); 
+            document.getElementById('btnPrix').hidden=true; 
+            if  (mailResabool && nomPrenomAdresseTelBool) {
+                document.getElementById('btnResa').hidden=false; 
+            }
+        },
+        // s il y a une erreur je l'affiche en console et dans la div #messageID
+        error: function(error) {
+            // faute d'orthogaphe voulue pour différentier ce message d'erreur d'un message d'erreur généré par le systeme
+            console.log("erRrore"+error.statusText);
+        
+        }
+    });
 }
 
 function voirEmplLibres() {
     
-         document.getElementById('fNomResa').disabled=true;
-        document.getElementById('fPrenomResa').disabled=true;
-        document.getElementById('fAdresseResa').disabled=true;
-        document.getElementById('fTelResa').disabled=true;
-        document.getElementById('fEmailResa').disabled=true;
-     
-        
-         var dateDeb= $('#startDate').val();
-         var dateFin= $('#endDate').val();
-      
-          $('#dateDebInfo').html("Du "+new Date($('#startDate').val()).toLocaleString().substr(0,10));
-          $('#dateFinInfo').html("Au "+new Date($('#endDate').val()).toLocaleString().substr(0,10));
-     var myData= {   "action": "voirEmplLibres", 
-                  "dateDeb": dateDeb,
-                     "dateFin": dateFin,
-                };
-    console.log( myData);
-    
+    document.getElementById('fNomResa').disabled=true;
+    document.getElementById('fPrenomResa').disabled=true;
+    document.getElementById('fAdresseResa').disabled=true;
+    document.getElementById('fTelResa').disabled=true;
+    document.getElementById('fEmailResa').disabled=true;
  
-                    
+    var dateDeb= $('#startDate').val();
+    var dateFin= $('#endDate').val();
+  
+    $('#dateDebInfo').html("Du "+new Date($('#startDate').val()).toLocaleString().substr(0,10));
+    $('#dateFinInfo').html("Au "+new Date($('#endDate').val()).toLocaleString().substr(0,10));
+    var myData= {"action" : "voirEmplLibres", 
+                 "dateDeb": dateDeb,
+                 "dateFin": dateFin  };
+       
     $.ajax({
         url: "server.php", // Url appelée
         method: "POST",              // la méthode GET ou POST
@@ -962,93 +893,35 @@ function voirEmplLibres() {
 
                              // si l'envoi est réussi 
         success: function(response) { 
-            console.log(response);
-          
-           
-            if (  response.emplLibres.length>0) {
+            
+            if ( response.emplLibres.length>0 ) {
                 
-                 document.getElementById('startDate').disabled=true;
-                document.getElementById('endDate').disabled=true;
-    
-                document.getElementById('result').hidden=false; 
-                 document.getElementById('btnPrix').hidden=false;
-                document.getElementById('btnVoirEmplLibres').hidden=true;
-            //    document.getElementById('btnResaInscript').hidden=false;
-                 
-               // const myInterPrix=setInterval(prix,1000);
-                
-                document.getElementById('finforesaNadult').disabled=false;
+                document.getElementById('startDate').disabled       =true;
+                document.getElementById('endDate').disabled         =true;
+                document.getElementById('result').hidden            =false; 
+                document.getElementById('btnPrix').hidden           =false;
+                document.getElementById('btnVoirEmplLibres').hidden =true;
+                document.getElementById('finforesaNadult').disabled =false;
                 document.getElementById('finforesaNenfant').disabled=false;
-                document.getElementById('finforesaNchien').disabled=false;
+                document.getElementById('finforesaNchien').disabled =false;
                 $('#resultEmpl').html(" " );
                 prix();
-                
-                
-               var    idEmpl=response.emplLibres[0];
+                var idEmpl=response.emplLibres[0];
                 $('#emplNumero').val(idEmpl);
                 clearInterval(myIntercheckmailResa)  ;
                 
-       
-                    
-
-               
             } else {
-                 $('#resultEmpl').html("Pas d'emplacement libre <br> Plan d'occupation plus bas " );
-                 document.getElementById('result').hidden=false;
+                $('#resultEmpl').html("Pas d'emplacement libre <br> Plan d'occupation plus bas " );
+                document.getElementById('result').hidden=false;
                 document.getElementById('btnPrix').hidden=true;
-                  document.getElementById('btnVoirEmplLibres').hidden=false;
+                document.getElementById('btnVoirEmplLibres').hidden=false;
             }
-
-        },
-                            
-                           
+        },     
         error: function(error) {
-             console.log("errr6rror : "+error.statusText);
-                            
+            console.log("erRror : "+error.statusText);
         }
-        
     }); 
 }
-
-/*
-function checkDates() {
-    var startDate = document.getElementById('startDate').value;
-    var endDate = document.getElementById('endDate').value;
-    var msgresultDiv = document.getElementById('msgDatesResa');
-    
-    
-    if (new Date(startDate) > new Date(endDate)) {
-       boolFinAvantDeb=true;
-       njours =0;
-        msgresultDiv.textContent = 'La date de début ne peut pas être après la date de fin.';
-    } else {
-          boolFinAvantDeb=false;
-          
-             var start = new Date(startDate);
-          //   start.setDate(start.getDate());
-              var end = new Date(endDate);
-            //  end.setDate(end.getDate());
-              $('#dateDeb').val(startDate);
-              $('#dateFin').val(endDate);
-            msgresultDiv.textContent = ' ';
-    
-         njours =( end - start) / (1000 * 3600 * 24)  ;
-         
-         $('#njoursInfo').html(njours  + " nuits");
-           console.log(boolFinAvantDeb) ;
-             console.log(njours) ;
-    }
-      if ( !boolFinAvantDeb && njours>0  ) { 
-       
-        document.getElementById('btnVoirEmplLibres').hidden=false;
-    } else { 
-       
-        document.getElementById('btnVoirEmplLibres').hidden=true;
-    } 
-}     
-*/ 
-       
-       
 
 </script>
 
